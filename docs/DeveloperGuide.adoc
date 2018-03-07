@@ -850,10 +850,13 @@ _{More to be added}_
 == Non Functional Requirements
 
 .  Should work on any <<mainstream-os,mainstream OS>> as long as it has Java `1.8.0_60` or higher installed.
-.  Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.
+.  Should be able to hold up to 2000 Coin accounts without a noticeable sluggishness in performance for typical usage.
 .  A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.
-
-_{More to be added}_
+.  Should be accurate in the representation of Coin amounts, free of numerical errors.
+.  All sensitive data should be stored locally.
+.  Should only make configuration files in the local directory to remain fully portable.
+.  Should not take more than one minute to generate summary reports.
+.  Should update news and charts automatically at the user-specified frequency, with tolerance of 1% (e.g. +/-18s for 30min interval)
 
 [appendix]
 == Glossary
