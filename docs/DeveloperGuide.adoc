@@ -798,20 +798,33 @@ Priorities: High (must have) - `* * \*`, Medium (nice to have) - `* \*`, Low (un
 [width="59%",cols="22%,<23%,<25%,<30%",options="header",]
 |=======================================================================
 |Priority |As a ... |I want to ... |So that I can...
-|`* * *` |new user |see usage instructions |refer to instructions when I forget how to use the App
-
-|`* * *` |user |add a new person |
-
-|`* * *` |user |delete a person |remove entries that I no longer need
-
-|`* * *` |user |find a person by name |locate details of persons without having to go through the entire list
-
-|`* *` |user |hide <<private-contact-detail,private contact details>> by default |minimize chance of someone else seeing them by accident
-
-|`*` |user with many persons in the address book |sort persons by name |locate a person easily
+|`* * *` |new user |see usage instructions |figure out how to use the application.
+|`* * *` |user |see my personal portfolio |track gains/losses.
+|`* * *` |user |add new coin accounts |
+|`* * *` |user |delete coin accounts | remove unwanted information.
+|`* * *` |user actively trading |be able to store up to 2000 cryptocurrencies |maintain my extensive portfolio.
+|`* * *` |user |have a search and find feature |avoid going through all coins manually
+|`* * *` |user who values privacy |use a program without making accounts |keep it simple.
+|`* * *` |user who values privacy |store my data only on local storage |avoid having my data on potentially insecure servers.
+|`* * *` |user |avoid lots of manual entry |save time
+|`* *` |user |have a bookmarks or favourites watchlist |prioritise certain coins
+|`* *` |user |track price, market cap, and circulating supply from coinmarket |get all my information in one place.
+|`* *`  |user |see <<RSI>>/<<MACD>> graphs |analyse price trends for decision-making.
+|`* *` |user |see Overbought/Oversold lines | do as above.
+|`*` |user |be able to set support and resistance lines | do as above.
+|`*` |user |have candlestick graphs with simple/exponential moving average overlay | do as above.
+|`*` |user |be able to search information on a specific coin |get all my information in one place
+|`*` |user |have desktop notifications |be informed when something needs my attention
+|`* *` |user |have different color themes | customise my program.
+|`* *` |user |have multilingual support |understand the program better
+|`* *` |user |be able to import/export my data |transfer it to other computers
+|`* *` |user |macro and write custom aliasing for commands |customize my experience
+|`*` |user |have a daily/hourly report |keep track of the current state of my accounts.
+|`* *` |user |not to have to exit the current search results before entering a new command |operate on my search results efficiently
+|`* * *` |user |have a tagging system |simplify and categorize my accounts
+|`* *` |user |have a sorting feature for names, coin prices, account values, etc. |quickly rank my choices
+|`* *` |user |have a fixed interval backups, that can also be manually set |ensure my data will not be lost
 |=======================================================================
-
-_{More to be added}_
 
 [appendix]
 == Use Cases
