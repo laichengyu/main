@@ -816,31 +816,31 @@ _{More to be added}_
 [appendix]
 == Use Cases
 
-(For all use cases below, the *System* is the `AddressBook` and the *Actor* is the `user`, unless specified otherwise)
+(For all use cases below, the *System* is the `CoinBook` and the *Actor* is the `user`, unless specified otherwise)
 
 [discrete]
-=== Use case: Delete person
+=== Use case: Export storage data
 
 *MSS*
 
-1.  User requests to list persons
-2.  AddressBook shows a list of persons
-3.  User requests to delete a specific person in the list
-4.  AddressBook deletes the person
+1.  User requests to export storage data
+2.  CoinBook requests for the file destination
+3.  User specifies the file destination
+4.  CoinBook exports the file
 +
 Use case ends.
 
 *Extensions*
 
 [none]
-* 2a. The list is empty.
+* 2a. The storage is empty.
 +
 Use case ends.
 
-* 3a. The given index is invalid.
+* 3a. The given file destination is invalid.
 +
 [none]
-** 3a1. AddressBook shows an error message.
+** 3a1. CoinBook shows an error message.
 +
 Use case resumes at step 2.
 
