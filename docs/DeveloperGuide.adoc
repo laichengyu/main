@@ -819,6 +819,25 @@ _{More to be added}_
 (For all use cases below, the *System* is the `CoinBook` and the *Actor* is the `user`, unless specified otherwise)
 
 [discrete]
+=== Use case: Delete coin listings
+
+*MSS*
+
+1. User requests to delete a coin listing
+2. CoinBook deletes the specified coin
++
+Use case ends.
+
+*Extensions*
+
+[none]
+* 2a. The specified coin does not exist in the storage.
++
+[none]
+** 2a1. CoinBook shows an error message.
++
+Use case resumes at step 1.
+
 === Use case: Export storage data
 
 *MSS*
