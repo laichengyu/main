@@ -42,7 +42,7 @@ public class JsonUtil {
                     .addDeserializer(Level.class, new LevelDeserializer(Level.class)));
 
     private static ObjectMapper listOfObjectsMapper = new ObjectMapper();
-    
+
     static <T> void serializeObjectToJsonFile(File jsonFile, T objectToSerialize) throws IOException {
         FileUtil.writeToFile(jsonFile, toJsonString(objectToSerialize));
     }
@@ -51,7 +51,7 @@ public class JsonUtil {
             throws IOException {
         return fromJsonString(FileUtil.readFromFile(jsonFile), classOfObjectToDeserialize);
     }
-    
+
     static <T> List<T> deserializeListOfObjectsFromJsonFile(File jsonFile, Class<T> classOfObjectToDeserialize)
             throws IOException, ClassNotFoundException {
         Class<T[]> arrayClass = (Class<T[]>) Class.forName("[L" + classOfObjectToDeserialize.getName() + ";");

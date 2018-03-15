@@ -7,8 +7,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.util.logging.Logger;
 import java.net.URL;
+import java.util.logging.Logger;
 
 import seedu.address.commons.core.LogsCenter;
 
@@ -28,14 +28,14 @@ public class FetchUtil {
         URL urlObject;
         HttpURLConnection urlConnection = null;
         File serverResponse;
-        
+
         try {
             urlObject = new URL(url);
             urlConnection = (HttpURLConnection) urlObject.openConnection();
 
             int responseCode = urlConnection.getResponseCode();
 
-            if(responseCode == HttpURLConnection.HTTP_OK){
+            if (responseCode == HttpURLConnection.HTTP_OK) {
                 serverResponse = readStream(urlConnection.getInputStream());
                 logger.info("Fetch request from " + url + " is successful");
                 return serverResponse;
@@ -49,7 +49,7 @@ public class FetchUtil {
                 urlConnection.disconnect();
             }
         }
-        
+
         return null;
     }
 
@@ -61,7 +61,8 @@ public class FetchUtil {
     private static File readStream(InputStream inputStream) {
         BufferedReader reader = null;
         StringBuffer response = new StringBuffer();
-        File serverData = new File("temp.json"); //Do we want to keep the data of API calls? If yes, overwrite or make new copies?
+        File serverData = new File("temp.json"); 
+        //Do we want to keep the data of API calls? If yes, overwrite or make new copies?
 
         try {
             reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -82,8 +83,8 @@ public class FetchUtil {
                 }
             }
         }
-        
+
         return null;
     }
-    
+
 }
