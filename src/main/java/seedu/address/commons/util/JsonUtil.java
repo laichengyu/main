@@ -52,6 +52,7 @@ public class JsonUtil {
         return fromJsonString(FileUtil.readFromFile(jsonFile), classOfObjectToDeserialize);
     }
 
+    @SuppressWarnings( "unchecked" )
     static <T> List<T> deserializeListOfObjectsFromJsonFile(File jsonFile, Class<T> classOfObjectToDeserialize)
             throws IOException, ClassNotFoundException {
         Class<T[]> arrayClass = (Class<T[]>) Class.forName("[L" + classOfObjectToDeserialize.getName() + ";");
