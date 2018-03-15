@@ -61,7 +61,7 @@ public class FetchUtil {
     private static File readStream(InputStream inputStream) {
         BufferedReader reader = null;
         StringBuffer response = new StringBuffer();
-        File serverData = new File("temp.json"); 
+        File serverData = new File("temp.json");
         //Do we want to keep the data of API calls? If yes, overwrite or make new copies?
 
         try {
