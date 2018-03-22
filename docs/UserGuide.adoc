@@ -292,6 +292,11 @@ Format: `exit`
 CoinBook data are saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
+=== Autocomplete `[coming in v1.5]`
+
+Pressing kbd:[Tab] will autocomplete the field where the cursor is at with a matching suggestion.
+Subsequent kbd:[Tab] key presses will cycle through the list of suggestions.
+
 // tag::dataencryption[]
 === Encrypting data files `[coming in v2.0]`
 
