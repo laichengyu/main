@@ -24,16 +24,16 @@ public class UrlBuilderUtil {
      * @return String URL concatenated with params
      */
     public static String buildUrl(String url, List<NameValuePair> params) {
-        String URL = "";
+        String Url = "";
         try {
             URIBuilder uri = new URIBuilder(url);
             uri.addParameters(params);
-            URL = uri.build().toURL().toString();
+            Url = uri.build().toURL().toString();
         } catch (URISyntaxException e) {
             logger.info("Illegal characters found in url: " + url + " or params: " + params.toString());
         } catch (MalformedURLException e) {
             logger.info("Malformed URL: " + url + " provided");
         }
-        return URL;
+        return Url;
     }
 }
