@@ -86,7 +86,7 @@ public class ModelManager extends ComponentManager implements Model {
     public void syncAll(List<Coin> updatedData) {
         requireNonNull(updatedData);
 
-        addressBook.syncAll();
+        addressBook.syncAll(updatedData);
         indicateAddressBookChanged();
     }
 
