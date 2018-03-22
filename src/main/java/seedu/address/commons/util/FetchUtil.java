@@ -17,7 +17,7 @@ import seedu.address.commons.core.LogsCenter;
  */
 public class FetchUtil {
 
-    private static final Logger logger = LogsCenter.getLogger(JsonUtil.class);
+    private static final Logger logger = LogsCenter.getLogger(FetchUtil.class);
 
     /**
      * Retrieves data from the specified url
