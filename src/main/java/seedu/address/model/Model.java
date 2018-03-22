@@ -1,5 +1,6 @@
 package seedu.address.model;
 
+import java.util.List;
 import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
@@ -36,6 +37,11 @@ public interface Model {
     void updatePerson(Person target, Person editedPerson)
             throws DuplicatePersonException, PersonNotFoundException;
 
+    /**
+     * Syncs all coin data
+     */
+    void syncAll(List<Coin> updatedData);
+    
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Person> getFilteredPersonList();
 
