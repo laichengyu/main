@@ -6,6 +6,8 @@ import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
+import com.google.gson.JsonObject;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -78,6 +80,14 @@ public class ModelManager extends ComponentManager implements Model {
         requireAllNonNull(target, editedCoin);
 
         coinBook.updateCoin(target, editedCoin);
+        indicateAddressBookChanged();
+    }
+
+    @Override
+    public void syncAll(JsonObject newData) {
+        requireNonNull(newData);
+
+        addressBook.syncAll(newData);
         indicateAddressBookChanged();
     }
 
