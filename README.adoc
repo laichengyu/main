@@ -48,6 +48,6 @@ endif::[]
 * Based off the AddressBook-Level4 project, a software project for students learning Software Engineering with Java as the main programming language. Created by the SE-EDU initiative at https://github.com/se-edu/.
 * Some parts of this sample application were inspired by the excellent http://code.makery.ch/library/javafx-8-tutorial/[Java FX tutorial] by
 _Marco Jakob_.
-* Libraries used: https://github.com/TomasMikula/EasyBind[EasyBind], https://github.com/TestFX/TestFX[TextFX], https://bitbucket.org/controlsfx/controlsfx/[ControlsFX], https://github.com/FasterXML/jackson[Jackson], https://github.com/google/guava[Guava], https://github.com/junit-team/junit4[JUnit4], http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/overview-summary.html[Apache HttpClient]
+* Libraries used: https://github.com/TomasMikula/EasyBind[EasyBind], https://github.com/TestFX/TestFX[TextFX], https://bitbucket.org/controlsfx/controlsfx/[ControlsFX], https://github.com/FasterXML/jackson[Jackson], https://github.com/google/guava[Guava], https://github.com/junit-team/junit4[JUnit4], http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/overview-summary.html[Apache HttpClient], https://github.com/google/gson/[GSON]
 
 == Licence : link:LICENSE[MIT]
