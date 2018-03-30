@@ -2,6 +2,8 @@ package seedu.address.commons.util;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,14 +12,18 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.logging.Logger;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import seedu.address.commons.core.LogsCenter;
 
 /**
- * Retrieves data in JSON/XML format from a specified URL
+ * Retrieves data in JSON format from a specified URL
  */
 public class FetchUtil {
 
-    private static final Logger logger = LogsCenter.getLogger(JsonUtil.class);
+    private static final Logger logger = LogsCenter.getLogger(FetchUtil.class);
 
     /**
      * Retrieves data from the specified url
@@ -51,6 +57,26 @@ public class FetchUtil {
         }
 
         return null;
+    }
+
+    /**
+     * Retrieves data from the specified url and converts it into a JsonObject
+     * @param url cannot be null
+     * @return JsonObject converted from the File obtained from the url
+     */
+    public static JsonObject fetchAsJson(String url) {
+        File serverResponse = fetch(url);
+        JsonObject jsonObject = new JsonObject();
+
+        try {
+            JsonParser parser = new JsonParser();
+            JsonElement jsonElement = parser.parse(new FileReader(serverResponse));
+            jsonObject = jsonElement.getAsJsonObject();
+        } catch (FileNotFoundException e) {
+            logger.info("File retrieved from URL not found");
+        }
+
+        return jsonObject;
     }
 
     /**
