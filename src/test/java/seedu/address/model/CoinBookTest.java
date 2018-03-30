@@ -8,7 +8,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -74,6 +76,7 @@ public class AddressBookTest {
     private static class CoinBookStub implements ReadOnlyCoinBook {
         private final ObservableList<Coin> coins = FXCollections.observableArrayList();
         private final ObservableList<Tag> tags = FXCollections.observableArrayList();
+        private final Set<String> codes = new HashSet<>();
 
         CoinBookStub(Collection<Coin> coins, Collection<? extends Tag> tags) {
             this.coins.setAll(coins);
@@ -88,6 +91,11 @@ public class AddressBookTest {
         @Override
         public ObservableList<Tag> getTagList() {
             return tags;
+        }
+
+        @Override
+        public Set<String> getCodeList() {
+            return codes;
         }
     }
 
