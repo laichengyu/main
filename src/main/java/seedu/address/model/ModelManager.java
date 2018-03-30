@@ -86,7 +86,7 @@ public class ModelManager extends ComponentManager implements Model {
 
     @Override
     public void syncAll(JsonObject newData)
-            throws DuplicateCoinException, CoinNotFoundException{
+            throws DuplicateCoinException, CoinNotFoundException {
         requireNonNull(newData);
 
         coinBook.syncAll(newData);

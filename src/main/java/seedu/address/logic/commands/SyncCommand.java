@@ -25,7 +25,7 @@ public class SyncCommand extends Command {
 
     public static final String MESSAGE_SUCCESS = "Synced all coins with latest cryptocurrency data";
 
-    private static String CRYPTOCOMPARE_API_URL = "https://min-api.cryptocompare.com/data/pricemulti";
+    private String cryptoCompareApiUrl = "https://min-api.cryptocompare.com/data/pricemulti";
 
     /**
      * Creates and returns a {@code List<NameValuePair>} with two key-value pairs, coin symbols and currency.
@@ -47,7 +47,7 @@ public class SyncCommand extends Command {
      * @param params cannot be null
      */
     private void buildApiUrl(List<NameValuePair> params) {
-        CRYPTOCOMPARE_API_URL = UrlBuilderUtil.buildUrl(CRYPTOCOMPARE_API_URL, params);
+        cryptoCompareApiUrl = UrlBuilderUtil.buildUrl(cryptoCompareApiUrl, params);
     }
 
     @Override
@@ -55,7 +55,7 @@ public class SyncCommand extends Command {
         try {
             List<NameValuePair> params = getParams(model.getCodeList());
             buildApiUrl(params);
-            JsonObject newData = FetchUtil.fetchAsJson(CRYPTOCOMPARE_API_URL);
+            JsonObject newData = FetchUtil.fetchAsJson(cryptoCompareApiUrl);
             model.syncAll(newData);
             return new CommandResult(MESSAGE_SUCCESS);
         } catch (DuplicateCoinException dpe) {
