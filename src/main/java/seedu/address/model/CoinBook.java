@@ -30,6 +30,7 @@ public class CoinBook implements ReadOnlyCoinBook {
 
     private final UniqueCoinList coins;
     private final UniqueTagList tags;
+    private final Set<String> codes;
 
     /*
      * The 'unusual' code block below is an non-static initialization block, sometimes used to avoid duplication
@@ -41,6 +42,8 @@ public class CoinBook implements ReadOnlyCoinBook {
     {
         coins = new UniqueCoinList();
         tags = new UniqueTagList();
+        //TODO: codes currently contain dummy coin codes, need to use actual data
+        codes = new HashSet<>(Arrays.asList("BTC", "ETH", "XRP", "NEO", "ICX", "DOGE"));
     }
 
     public CoinBook() {}
@@ -195,6 +198,11 @@ public class CoinBook implements ReadOnlyCoinBook {
     @Override
     public ObservableList<Tag> getTagList() {
         return tags.asObservableList();
+    }
+
+    @Override
+    public Set<String> getCodeList() {
+        return Collections.unmodifiableSet(codes);
     }
 
     @Override
