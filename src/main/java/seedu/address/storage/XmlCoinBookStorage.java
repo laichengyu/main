@@ -81,9 +81,11 @@ public class XmlCoinBookStorage implements CoinBookStorage {
         XmlFileStorage.saveDataToFile(file, new XmlSerializableCoinBook(addressBook));
     }
 
+    //@@author laichengyu
     @Override
     public void backupCoinBook(ReadOnlyCoinBook addressBook) throws IOException {
         saveCoinBook(addressBook, backupFilePath);
     }
+    //@@author
 
 }

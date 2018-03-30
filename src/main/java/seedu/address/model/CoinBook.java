@@ -121,6 +121,7 @@ public class CoinBook implements ReadOnlyCoinBook {
         coins.setCoin(target, syncedEditedCoin);
     }
 
+    //@@author laichengyu
     /**
      * Replaces every coin in the list that has a price change in {@code newData} with {@code updatedCoin}.
      * {@code CoinBook}'s tag list will be updated with the tags of {@code updatedCoin}.
@@ -142,6 +143,7 @@ public class CoinBook implements ReadOnlyCoinBook {
             updateCoin(coin, updatedCoin);
         }
     }
+    //@@author
 
     /**
      *  Updates the master tag list to include tags in {@code coin} that are not in the list.
@@ -200,10 +202,12 @@ public class CoinBook implements ReadOnlyCoinBook {
         return tags.asObservableList();
     }
 
+    //@@author laichengyu
     @Override
     public Set<String> getCodeList() {
         return Collections.unmodifiableSet(codes);
     }
+    //@@author
 
     @Override
     public boolean equals(Object other) {

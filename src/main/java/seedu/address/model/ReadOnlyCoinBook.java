@@ -23,10 +23,12 @@ public interface ReadOnlyCoinBook {
      */
     ObservableList<Tag> getTagList();
 
+    //@@author laichengyu
     /**
      * Returns an unmodifiable view of the codes list.
      * This list will not contain any duplicate codes.
      */
     Set<String> getCodeList();
+    //@@author
 
 }

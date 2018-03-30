@@ -77,10 +77,12 @@ public class StorageManager extends ComponentManager implements Storage {
         coinBookStorage.saveCoinBook(addressBook, filePath);
     }
 
+    //@@author laichengyu
     @Override
     public void backupCoinBook(ReadOnlyCoinBook addressBook) throws IOException {
         coinBookStorage.backupCoinBook(addressBook);
     }
+    //@@author
 
     @Override
     @Subscribe

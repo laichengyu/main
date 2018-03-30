@@ -42,10 +42,12 @@ public interface CoinBookStorage {
      */
     void saveCoinBook(ReadOnlyCoinBook addressBook, String filePath) throws IOException;
 
+    //@@author laichengyu
     /**
      * Saves the given {@link ReadOnlyCoinBook} to a fixed temporary location.
      * @param addressBook cannot be null.
      * @throws IOException if there was any problem writing to the file.
      */
     void backupCoinBook(ReadOnlyCoinBook addressBook) throws IOException;
+    //@@author
 }

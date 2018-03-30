@@ -95,10 +95,12 @@ public class CoinBookTest {
             return tags;
         }
 
+        //@@author laichengyu
         @Override
         public Set<String> getCodeList() {
             return codes;
         }
+        //@@author
     }
 
 }

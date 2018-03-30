@@ -14,12 +14,14 @@ public class Price {
         this.value = 0.0;
     }
 
+    //@@author laichengyu
     /**
      * Constructs a {@code Price} with given value.
      */
     public Price(double value) {
         this.value = value;
     }
+    //@@author
 
     public Double getValue() {
         return value;

@@ -55,6 +55,7 @@ public class Coin {
         this.totalDollarsBought = new Amount(toCopy.getTotalDollarsBought());
     }
 
+    //@@author laichengyu
     /**
      * Copy constructor with price update.
      */
@@ -69,6 +70,7 @@ public class Coin {
         this.totalDollarsSold = new Amount(toCopy.getTotalDollarsSold());
         this.totalDollarsBought = new Amount(toCopy.getTotalDollarsBought());
     }
+    //@@author
 
     /**
      * Copy constructor with tag update.

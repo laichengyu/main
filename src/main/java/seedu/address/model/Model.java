@@ -42,6 +42,7 @@ public interface Model {
     /** Returns an unmodifiable view of the filtered coin list */
     ObservableList<Coin> getFilteredCoinList();
 
+    //@@author laichengyu
     /** Returns an unmodifiable view of the code list */
     Set<String> getCodeList();
 
@@ -50,6 +51,7 @@ public interface Model {
       */
     void syncAll(JsonObject newData)
             throws DuplicateCoinException, CoinNotFoundException;
+    //@@author
 
     /**
      * Updates the filter of the filtered coin list to filter by the given {@code predicate}.

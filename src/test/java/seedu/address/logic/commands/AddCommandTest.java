@@ -126,6 +126,7 @@ public class AddCommandTest {
             fail("This method should not be called.");
         }
 
+        //@@author laichengyu
         @Override
         public void syncAll(JsonObject newData)
                 throws DuplicateCoinException, CoinNotFoundException {
@@ -133,13 +134,14 @@ public class AddCommandTest {
         }
 
         @Override
-        public ObservableList<Coin> getFilteredCoinList() {
+        public Set<String> getCodeList() {
             fail("This method should not be called.");
             return null;
         }
+        //@@author
 
         @Override
-        public Set<String> getCodeList() {
+        public ObservableList<Coin> getFilteredCoinList() {
             fail("This method should not be called.");
             return null;
         }

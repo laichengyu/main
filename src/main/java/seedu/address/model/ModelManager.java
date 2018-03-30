@@ -84,6 +84,7 @@ public class ModelManager extends ComponentManager implements Model {
         indicateAddressBookChanged();
     }
 
+    //@@author laichengyu
     @Override
     public void syncAll(JsonObject newData)
             throws DuplicateCoinException, CoinNotFoundException {
@@ -98,6 +99,7 @@ public class ModelManager extends ComponentManager implements Model {
     public Set<String> getCodeList() {
         return coinBook.getCodeList();
     }
+    //@@author
 
     //=========== Filtered Coin List Accessors =============================================================
 
