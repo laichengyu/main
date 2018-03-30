@@ -3,6 +3,7 @@ package seedu.address.model;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.Set;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -89,6 +90,12 @@ public class ModelManager extends ComponentManager implements Model {
 
         addressBook.syncAll(newData);
         indicateAddressBookChanged();
+    }
+
+    /** Returns an unmodifiable view of the code list */
+    @Override
+    public Set<String> getCodeList() {
+        return addressBook.getCodeList();
     }
 
     //=========== Filtered Coin List Accessors =============================================================

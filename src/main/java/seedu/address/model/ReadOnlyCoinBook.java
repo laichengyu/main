@@ -1,5 +1,7 @@
 package seedu.address.model;
 
+import java.util.Set;
+
 import javafx.collections.ObservableList;
 import seedu.address.model.coin.Coin;
 import seedu.address.model.tag.Tag;
@@ -20,5 +22,11 @@ public interface ReadOnlyCoinBook {
      * This list will not contain any duplicate tags.
      */
     ObservableList<Tag> getTagList();
+
+    /**
+     * Returns an unmodifiable view of the codes list.
+     * This list will not contain any duplicate codes.
+     */
+    Set<String> getCodeList();
 
 }

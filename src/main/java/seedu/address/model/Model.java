@@ -1,5 +1,6 @@
 package seedu.address.model;
 
+import java.util.Set;
 import java.util.function.Predicate;
 
 import com.google.gson.JsonObject;
@@ -40,6 +41,9 @@ public interface Model {
 
     /** Returns an unmodifiable view of the filtered coin list */
     ObservableList<Coin> getFilteredCoinList();
+
+    /** Returns an unmodifiable view of the code list */
+    Set<String> getCodeList();
 
     /**
       * Syncs all coin data
