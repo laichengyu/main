@@ -88,14 +88,14 @@ public class ModelManager extends ComponentManager implements Model {
     public void syncAll(JsonObject newData) {
         requireNonNull(newData);
 
-        addressBook.syncAll(newData);
+        coinBook.syncAll(newData);
         indicateAddressBookChanged();
     }
 
     /** Returns an unmodifiable view of the code list */
     @Override
     public Set<String> getCodeList() {
-        return addressBook.getCodeList();
+        return coinBook.getCodeList();
     }
 
     //=========== Filtered Coin List Accessors =============================================================
