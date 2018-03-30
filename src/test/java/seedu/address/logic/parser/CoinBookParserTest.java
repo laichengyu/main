@@ -30,11 +30,11 @@ import seedu.address.testutil.CoinBuilder;
 import seedu.address.testutil.CoinUtil;
 import seedu.address.testutil.EditCoinDescriptorBuilder;
 
-public class AddressBookParserTest {
+public class CoinBookParserTest {
     @Rule
     public ExpectedException thrown = ExpectedException.none();
 
-    private final AddressBookParser parser = new AddressBookParser();
+    private final CoinBookParser parser = new CoinBookParser();
 
     @Test
     public void parseCommand_add() throws Exception {
