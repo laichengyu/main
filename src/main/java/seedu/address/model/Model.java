@@ -48,7 +48,8 @@ public interface Model {
     /**
       * Syncs all coin data
       */
-    void syncAll(JsonObject newData);
+    void syncAll(JsonObject newData)
+            throws DuplicateCoinException, CoinNotFoundException;
 
     /**
      * Updates the filter of the filtered coin list to filter by the given {@code predicate}.
