@@ -11,6 +11,9 @@ import com.google.gson.JsonObject;
 
 import seedu.address.commons.util.FetchUtil;
 import seedu.address.commons.util.UrlBuilderUtil;
+import seedu.address.logic.commands.exceptions.CommandException;
+import seedu.address.model.coin.exceptions.CoinNotFoundException;
+import seedu.address.model.coin.exceptions.DuplicateCoinException;
 
 /**
  * Updates all coins in the coin book with latest cryptocurrency data
@@ -24,6 +27,12 @@ public class SyncCommand extends Command {
 
     private static String CRYPTOCOMPARE_API_URL = "https://min-api.cryptocompare.com/data/pricemulti";
 
+    /**
+     * Creates and returns a {@code List<NameValuePair>} with two key-value pairs, coin symbols and currency.
+     *
+     * @param coinList cannot be null
+     * @return parameters for CryptoCompare API call
+     */
     private List<NameValuePair> getParams(Set<String> coinList) {
         List<NameValuePair> params = new ArrayList<>();
         String coinCodes = String.join(",", coinList);
@@ -32,16 +41,27 @@ public class SyncCommand extends Command {
         return params;
     }
 
+    /**
+     * Adds parameters to the CryptoCompare API URL.
+     *
+     * @param params cannot be null
+     */
     private void buildApiUrl(List<NameValuePair> params) {
         CRYPTOCOMPARE_API_URL = UrlBuilderUtil.buildUrl(CRYPTOCOMPARE_API_URL, params);
     }
 
     @Override
-    public CommandResult execute() {
-        List<NameValuePair> params = getParams(model.getCodeList());
-        buildApiUrl(params);
-        JsonObject newData = FetchUtil.fetchAsJson(CRYPTOCOMPARE_API_URL);
-        model.syncAll(newData);
-        return new CommandResult(MESSAGE_SUCCESS);
+    public CommandResult execute() throws CommandException {
+        try {
+            List<NameValuePair> params = getParams(model.getCodeList());
+            buildApiUrl(params);
+            JsonObject newData = FetchUtil.fetchAsJson(CRYPTOCOMPARE_API_URL);
+            model.syncAll(newData);
+            return new CommandResult(MESSAGE_SUCCESS);
+        } catch (DuplicateCoinException dpe) {
+            throw new CommandException("Unexpected code path!");
+        } catch (CoinNotFoundException cnfe) {
+            throw new AssertionError("The target coin cannot be missing");
+        }
     }
 }
