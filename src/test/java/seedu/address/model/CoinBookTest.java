@@ -11,6 +11,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -21,7 +22,7 @@ import javafx.collections.ObservableList;
 import seedu.address.model.coin.Coin;
 import seedu.address.model.tag.Tag;
 
-public class AddressBookTest {
+public class CoinBookTest {
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -81,6 +82,7 @@ public class AddressBookTest {
         CoinBookStub(Collection<Coin> coins, Collection<? extends Tag> tags) {
             this.coins.setAll(coins);
             this.tags.setAll(tags);
+            this.codes.addAll(coins.stream().map(coin -> coin.getCode().toString()).collect(Collectors.toSet()));
         }
 
         @Override
