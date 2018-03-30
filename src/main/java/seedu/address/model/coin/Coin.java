@@ -56,6 +56,21 @@ public class Coin {
     }
 
     /**
+     * Copy constructor with price update.
+     */
+    public Coin(Coin toCopy, double newPrice) {
+        requireAllNonNull(toCopy);
+        this.code = toCopy.code;
+        // protect internal tags from changes in the arg list
+        this.tags = new UniqueTagList(toCopy.getTags());
+        this.price = new Price(newPrice);
+        this.totalAmountSold = new Amount(toCopy.getTotalAmountSold());
+        this.totalAmountBought = new Amount(toCopy.getTotalAmountBought());
+        this.totalDollarsSold = new Amount(toCopy.getTotalDollarsSold());
+        this.totalDollarsBought = new Amount(toCopy.getTotalDollarsBought());
+    }
+
+    /**
      * Copy constructor with tag update.
      */
     public Coin(Coin toCopy, Set<Tag> tags) {
