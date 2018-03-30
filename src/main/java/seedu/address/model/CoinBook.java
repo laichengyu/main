@@ -2,6 +2,8 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -9,6 +11,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import com.google.gson.JsonObject;
 
 import javafx.collections.ObservableList;
 import seedu.address.model.coin.Coin;
@@ -112,6 +116,28 @@ public class CoinBook implements ReadOnlyCoinBook {
         // This can cause the tags master list to have additional tags that are not tagged to any coin
         // in the coin list.
         coins.setCoin(target, syncedEditedCoin);
+    }
+
+    /**
+     * Replaces every coin in the list that has a price change in {@code newData} with {@code updatedCoin}.
+     * {@code CoinBook}'s tag list will be updated with the tags of {@code updatedCoin}.
+     *
+     * @throws DuplicateCoinException if updating the coin's details causes the coin to be equivalent to
+     *      another existing coin in the list.
+     * @throws CoinNotFoundException if {@code coin} could not be found in the list.
+     *
+     * @see #syncWithMasterTagList(Coin)
+     */
+    public void syncAll(JsonObject newData)
+            throws DuplicateCoinException, CoinNotFoundException {
+        requireNonNull(newData);
+
+        for (Coin coin : coins) {
+            String code = coin.getCode().toString();
+            double newPrice = newData.get(code).getAsJsonObject().get("USD").getAsDouble();
+            Coin updatedCoin = new Coin(coin, newPrice);
+            updateCoin(coin, updatedCoin);
+        }
     }
 
     /**
