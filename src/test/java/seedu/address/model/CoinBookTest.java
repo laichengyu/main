@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.Rule;
@@ -77,12 +75,10 @@ public class CoinBookTest {
     private static class CoinBookStub implements ReadOnlyCoinBook {
         private final ObservableList<Coin> coins = FXCollections.observableArrayList();
         private final ObservableList<Tag> tags = FXCollections.observableArrayList();
-        private final Set<String> codes = new HashSet<>();
 
         CoinBookStub(Collection<Coin> coins, Collection<? extends Tag> tags) {
             this.coins.setAll(coins);
             this.tags.setAll(tags);
-            this.codes.addAll(coins.stream().map(coin -> coin.getCode().toString()).collect(Collectors.toSet()));
         }
 
         @Override
@@ -97,8 +93,10 @@ public class CoinBookTest {
 
         //@@author laichengyu
         @Override
-        public Set<String> getCodeList() {
-            return codes;
+        public List<String> getCodeList() {
+            return Collections.unmodifiableList(coins.stream()
+                    .map(coin -> coin.getCode().toString())
+                    .collect(Collectors.toList()));
         }
         //@@author
     }

@@ -2,7 +2,6 @@ package seedu.address.model;
 
 import static java.util.Objects.requireNonNull;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -30,7 +29,6 @@ public class CoinBook implements ReadOnlyCoinBook {
 
     private final UniqueCoinList coins;
     private final UniqueTagList tags;
-    private final Set<String> codes;
 
     /*
      * The 'unusual' code block below is an non-static initialization block, sometimes used to avoid duplication
@@ -42,8 +40,6 @@ public class CoinBook implements ReadOnlyCoinBook {
     {
         coins = new UniqueCoinList();
         tags = new UniqueTagList();
-        //TODO: codes currently contain dummy coin codes, need to use actual data
-        codes = new HashSet<>(Arrays.asList("BTC", "ETH", "XRP", "NEO", "ICX", "DOGE"));
     }
 
     public CoinBook() {}
@@ -204,8 +200,10 @@ public class CoinBook implements ReadOnlyCoinBook {
 
     //@@author laichengyu
     @Override
-    public Set<String> getCodeList() {
-        return Collections.unmodifiableSet(codes);
+    public List<String> getCodeList() {
+        return Collections.unmodifiableList(coins.asObservableList().stream()
+                .map(coin -> coin.getCode().toString())
+                .collect(Collectors.toList()));
     }
     //@@author
 

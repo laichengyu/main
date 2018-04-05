@@ -3,7 +3,7 @@ package seedu.address.model;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import java.util.Set;
+import java.util.List;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
 
@@ -120,7 +120,7 @@ public class ModelManager extends ComponentManager implements Model {
 
     /** Returns an unmodifiable view of the code list */
     @Override
-    public Set<String> getCodeList() {
+    public List<String> getCodeList() {
         return coinBook.getCodeList();
     }
     //@@author

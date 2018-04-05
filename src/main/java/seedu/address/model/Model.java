@@ -1,6 +1,6 @@
 package seedu.address.model;
 
-import java.util.Set;
+import java.util.List;
 import java.util.function.Predicate;
 
 import com.google.gson.JsonObject;
@@ -47,7 +47,7 @@ public interface Model {
 
     //@@author laichengyu
     /** Returns an unmodifiable view of the code list */
-    Set<String> getCodeList();
+    List<String> getCodeList();
 
     /**
       * Syncs all coin data

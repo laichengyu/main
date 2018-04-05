@@ -1,6 +1,6 @@
 package seedu.address.model;
 
-import java.util.Set;
+import java.util.List;
 
 import javafx.collections.ObservableList;
 import seedu.address.model.coin.Coin;
@@ -28,7 +28,7 @@ public interface ReadOnlyCoinBook {
      * Returns an unmodifiable view of the codes list.
      * This list will not contain any duplicate codes.
      */
-    Set<String> getCodeList();
+    List<String> getCodeList();
     //@@author
 
 }

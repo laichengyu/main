@@ -4,7 +4,6 @@ package seedu.address.logic.commands;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -35,7 +34,7 @@ public class SyncCommand extends Command {
      * @param coinList cannot be null
      * @return parameters for CryptoCompare API call
      */
-    private List<NameValuePair> getParams(Set<String> coinList) {
+    private List<NameValuePair> getParams(List<String> coinList) {
         List<NameValuePair> params = new ArrayList<>();
         String coinCodes = String.join(",", coinList);
         params.add(new BasicNameValuePair("fsyms", coinCodes));
