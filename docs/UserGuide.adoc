@@ -399,11 +399,11 @@ Resets all data in _CoinBook_.
 This command can be reversed with `undo`, but only in the same session. The effect is permanent once _CoinBook_ is closed.
 ====
 
-=== Updating the information : `update` / `u` `[coming in v1.5]`
+=== Sync local, outdated data with latest data and information : `sync` / `sy` `[coming in v1.5]`
 
 .Format
 ----
-update
+sync
 ----
 
 Obtains the latest prices and refreshes the news feed from the Internet.
@@ -447,7 +447,7 @@ Subsequent kbd:[Tab] key presses will cycle through the list of suggestions.
 * *Undo* : `undo`
 * *Redo* : `redo`
 * *Clear* : `clear`
-* *Update* : `update`
+* *Sync* : `sync`
 * *Exit* :  `exit`
 
 [appendix]
