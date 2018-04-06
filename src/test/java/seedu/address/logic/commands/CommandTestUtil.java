@@ -9,7 +9,6 @@ import static seedu.address.logic.parser.TokenType.PREFIXTAG;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Predicate;
 
 import com.google.gson.JsonObject;
@@ -186,7 +185,7 @@ public class CommandTestUtil {
         }
 
         @Override
-        public Set<String> getCodeList() {
+        public List<String> getCodeList() {
             fail("This method should not be called.");
             return null;
         }
