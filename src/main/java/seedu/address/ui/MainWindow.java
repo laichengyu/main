@@ -239,14 +239,18 @@ public class MainWindow extends UiPart<Stage> {
     //@@author
 
     //@@author laichengyu
+    /**
+     * Displays loading animation when isLoading is true and hides it otherwise
+     * @param isLoading loading state of the application
+     */
     @FXML
     private void handleLoading(boolean isLoading) {
         if (isLoading) {
-//            Scene scene = new Scene(loadingAnimation, Color.TRANSPARENT);
-//            primaryStage.initStyle(StageStyle.TRANSPARENT);
-//            primaryStage.setScene(scene);
+            //Scene scene = new Scene(loadingAnimation, Color.TRANSPARENT);
+            //primaryStage.initStyle(StageStyle.TRANSPARENT);
+            //primaryStage.setScene(scene);
         } else {
-//            primaryStage.setScene(new Scene(null));
+            //primaryStage.setScene(new Scene(null));
         }
     }
 
