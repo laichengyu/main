@@ -156,11 +156,13 @@ public class MainWindow extends UiPart<Stage> {
         primaryStage.setTitle(appTitle);
     }
 
+    //@@author laichengyu
     private void setLoadingAnimation() {
         ProgressIndicator pi = new ProgressIndicator();
         loadingAnimation = new VBox(pi);
         loadingAnimation.setAlignment(Pos.CENTER);
     }
+    //@@author
 
     /**
      * Sets the default size based on user preferences.
@@ -236,6 +238,7 @@ public class MainWindow extends UiPart<Stage> {
     }
     //@@author
 
+    //@@author laichengyu
     @FXML
     private void handleLoading(boolean isLoading) {
         if (isLoading) {
@@ -252,4 +255,5 @@ public class MainWindow extends UiPart<Stage> {
         logger.info(LogsCenter.getEventHandlingLogMessage(event));
         handleLoading(event.isLoading);
     }
+    //@@author
 }
