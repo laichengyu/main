@@ -6,16 +6,20 @@ import com.google.common.eventbus.Subscribe;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextInputControl;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import seedu.address.commons.core.Config;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.ExitAppRequestEvent;
+import seedu.address.commons.events.ui.LoadingEvent;
 import seedu.address.commons.events.ui.NewsCardClickedEvent;
 import seedu.address.commons.events.ui.ShowHelpRequestEvent;
 import seedu.address.commons.events.ui.ShowNotifManRequestEvent;
@@ -62,6 +66,9 @@ public class MainWindow extends UiPart<Stage> {
     @FXML
     private StackPane statusbarPlaceholder;
 
+    @FXML
+    private VBox loadingAnimation;
+
     public MainWindow(Stage primaryStage, Config config, UserPrefs prefs, Logic logic) {
         super(FXML, primaryStage);
 
@@ -75,6 +82,7 @@ public class MainWindow extends UiPart<Stage> {
 
         // Configure the UI
         setTitle(config.getAppTitle());
+        setLoadingAnimation();
         setWindowDefaultSize(prefs);
 
         setAccelerators();
@@ -146,6 +154,12 @@ public class MainWindow extends UiPart<Stage> {
 
     private void setTitle(String appTitle) {
         primaryStage.setTitle(appTitle);
+    }
+
+    private void setLoadingAnimation() {
+        ProgressIndicator pi = new ProgressIndicator();
+        loadingAnimation = new VBox(pi);
+        loadingAnimation.setAlignment(Pos.CENTER);
     }
 
     /**
@@ -221,4 +235,21 @@ public class MainWindow extends UiPart<Stage> {
         notificationsWindow.show();
     }
     //@@author
+
+    @FXML
+    private void handleLoading(boolean isLoading) {
+        if (isLoading) {
+//            Scene scene = new Scene(loadingAnimation, Color.TRANSPARENT);
+//            primaryStage.initStyle(StageStyle.TRANSPARENT);
+//            primaryStage.setScene(scene);
+        } else {
+//            primaryStage.setScene(new Scene(null));
+        }
+    }
+
+    @Subscribe
+    private void handleLoadingEvent(LoadingEvent event) {
+        logger.info(LogsCenter.getEventHandlingLogMessage(event));
+        handleLoading(event.isLoading);
+    }
 }
