@@ -24,11 +24,13 @@ public interface Logic {
     /** Returns an unmodifiable view of the filtered list of coins */
     ObservableList<Coin> getFilteredCoinList();
 
+    //@@author laichengyu
     /** Returns an unmodifiable view of the list of coin codes */
     List<String> getCodeList();
 
     /** Returns an unmodifiable view of the list of coin codes */
     List<String> getCommandList();
+    //@@author
 
     /** Returns the list of input entered by the user, encapsulated in a {@code ListElementPointer} object */
     ListElementPointer getHistorySnapshot();

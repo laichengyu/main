@@ -38,8 +38,10 @@ public class CommandBox extends UiPart<Region> {
         this.logic = logic;
         // calls #setStyleToDefault() whenever there is a change to the text of the command box.
         commandTextField.textProperty().addListener((unused1, unused2, unused3) -> setStyleToDefault());
+        //@@author laichengyu
         SuggestionProvider<String> suggestionProvider = SuggestionProvider.create(logic.getCommandList());
         TextFields.bindAutoCompletion(commandTextField, suggestionProvider);
+        //@@author
         historySnapshot = logic.getHistorySnapshot();
     }
 

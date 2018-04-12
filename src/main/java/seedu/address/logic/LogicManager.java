@@ -55,6 +55,7 @@ public class LogicManager extends ComponentManager implements Logic {
         return model.getFilteredCoinList();
     }
 
+    //@@author laichengyu
     @Override
     public List<String> getCodeList() {
         return model.getCodeList();
@@ -64,6 +65,7 @@ public class LogicManager extends ComponentManager implements Logic {
     public List<String> getCommandList() {
         return commandList.getList();
     }
+    //@@author
 
     @Override
     public ListElementPointer getHistorySnapshot() {
