@@ -11,9 +11,6 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-
 import javafx.collections.ObservableList;
 import seedu.address.model.coin.Coin;
 import seedu.address.model.coin.Price;
@@ -130,17 +127,16 @@ public class CoinBook implements ReadOnlyCoinBook {
      *
      * @see #syncWithMasterTagList(Coin)
      */
-    public void syncAll(JsonObject newData)
+    public void syncAll(HashMap<String, Price> newPriceMetrics)
             throws DuplicateCoinException, CoinNotFoundException {
-        requireNonNull(newData);
+        requireNonNull(newPriceMetrics);
 
         for (Coin coin : coins) {
             String code = coin.getCode().toString();
-            JsonElement coinData = newData.get(code);
-            if (coinData == null) {
+            Price newPrice = newPriceMetrics.get(code);
+            if (newPrice == null) {
                 continue;
             }
-            Price newPrice = new Price();
             Coin updatedCoin = new Coin(coin, newPrice);
             updateCoin(coin, updatedCoin);
         }

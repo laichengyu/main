@@ -3,11 +3,10 @@ package seedu.address.model;
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.logging.Logger;
-
-import com.google.gson.JsonObject;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -17,6 +16,7 @@ import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.model.CoinBookChangedEvent;
 import seedu.address.commons.events.model.RuleBookChangedEvent;
 import seedu.address.model.coin.Coin;
+import seedu.address.model.coin.Price;
 import seedu.address.model.coin.exceptions.CoinNotFoundException;
 import seedu.address.model.coin.exceptions.DuplicateCoinException;
 import seedu.address.model.rule.Rule;
@@ -110,11 +110,11 @@ public class ModelManager extends ComponentManager implements Model {
 
     //@@author laichengyu
     @Override
-    public void syncAll(JsonObject newData)
+    public void syncAll(HashMap<String, Price> newPriceMetrics)
             throws DuplicateCoinException, CoinNotFoundException {
-        requireNonNull(newData);
+        requireNonNull(newPriceMetrics);
 
-        coinBook.syncAll(newData);
+        coinBook.syncAll(newPriceMetrics);
         indicateCoinBookChanged();
     }
 
