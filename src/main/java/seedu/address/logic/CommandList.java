@@ -30,10 +30,11 @@ public class CommandList {
     private List<String> commandList;
 
     public CommandList() {
-        commandList = Arrays.asList(HelpCommand.COMMAND_WORD, AddCommand.COMMAND_WORD, BuyCommand.COMMAND_WORD,
-                SellCommand.COMMAND_WORD, DeleteCommand.COMMAND_WORD, ClearCommand.COMMAND_WORD,
-                TagCommand.COMMAND_WORD, ListCommand.COMMAND_WORD, FindCommand.COMMAND_WORD, ViewCommand.COMMAND_WORD,
-                NotifyCommand.COMMAND_WORD, SortCommand.COMMAND_WORD, HistoryCommand.COMMAND_WORD, UndoCommand.COMMAND_WORD,
+        commandList = Arrays.asList(HelpCommand.COMMAND_WORD, AddCommand.COMMAND_WORD,
+                BuyCommand.COMMAND_WORD, SellCommand.COMMAND_WORD, DeleteCommand.COMMAND_WORD,
+                ClearCommand.COMMAND_WORD, TagCommand.COMMAND_WORD, ListCommand.COMMAND_WORD,
+                FindCommand.COMMAND_WORD, ViewCommand.COMMAND_WORD, NotifyCommand.COMMAND_WORD,
+                SortCommand.COMMAND_WORD, HistoryCommand.COMMAND_WORD, UndoCommand.COMMAND_WORD,
                 RedoCommand.COMMAND_WORD, SyncCommand.COMMAND_WORD, ExitCommand.COMMAND_WORD);
     }
 
