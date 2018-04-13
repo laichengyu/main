@@ -491,7 +491,8 @@ The result is as if only the first two lines were executed. Notice how the order
 
 // end::undoredo[]
 
-=== Sync with price server `sync` | `u` `[Coming in v1.5]`
+// tag::sync[]
+=== Sync with price server `sync` | `sy` `[Coming in v1.5]`
 
 .Format
 ----
@@ -499,6 +500,8 @@ sync
 ----
 
 Obtains the latest prices and refreshes the news feed from the Internet to update your coin data.
+
+// end::sync[]
 
 === Exit the program : `exit` | `q`
 
@@ -517,10 +520,12 @@ Exits the program.
 _CoinBook_ data is saved in the hard disk automatically after any command that changes the data. +
 There is no need to save manually.
 
+//tag::autocomplete[]
 === Autocomplete `[Coming in v1.5]`
 
 Pressing kbd:[Tab] will autocomplete the field where the cursor is at with a matching suggestion.
 Subsequent kbd:[Tab] key presses will cycle through the list of suggestions.
+//end::autocomplete[]
 
 == FAQ
 

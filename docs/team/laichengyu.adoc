@@ -1,46 +1,45 @@
-= John Doe - Project Portfolio
+= Lai Cheng Yu - Project Portfolio
 :imagesDir: ../images
 :stylesDir: ../stylesheets
+:repoLinkBase: https://github.com/CS2103JAN2018-F09-B3/main
 
-== PROJECT: AddressBook - Level 4
+== PROJECT: CoinBook
 
 ---
 
 == Overview
 
-AddressBook - Level 4 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.
+CoinBook is a desktop accounting application written in Java. It is targeted at cryptocurrency traders and enthusiasts, and allows them to keep track of the coins they hold, obtain price data and analytics, and read the latest news relevant to them in the same place. Primary interaction is through a CLI, and a GUI built with JavaFX.
 
 == Summary of contributions
 
-* *Major enhancement*: added *the ability to undo/redo previous commands*
-** What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.
-** Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.
-** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
-** Credits: _{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}_
+* *Major enhancement*: added a sync command that *updates all price-related metrics of cryptocurrencies with latest, live data*
+** What it does: allows the user to keep up to date with the latest price movements of cryptocurrencies invested.
+** Justification: This feature improves the product significantly because the volatile market that cryptocurrencies operate in necessitates that a user is frequently kept up to date with all changes in cryptocurrency prices.
+** Highlights: This enhancement demonstrates live updating of data from external web APIs. It required analysis of design alternatives between synchronous and asynchronous data fetching. The implementation too was challenging as it required many utilities to be built such as UrlBuilderUtil to adhere to HTTP request formats and FetchUtil to perform API calls.
+** Credits: External libraries used include: [http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/overview-summary.html[Apache HttpClient]], [https://github.com/google/gson/[GSON]] and [https://github.com/AsyncHttpClient/async-http-client[AsyncHttpClient]]
 
-* *Minor enhancement*: added a history command that allows the user to navigate to previous commands using up/down keys.
+* *Minor enhancement*: added a autocomplete feature that allows users to quickly enter in the command wanted.
 
-* *Code contributed*: [https://github.com[Functional code]] [https://github.com[Test code]] _{give links to collated code files}_
+* *Code contributed*: [https://github.com/CS2103JAN2018-F09-B3/main/blob/master/collated/functional/laichengyu.md[Functional code]] [https://github.com/CS2103JAN2018-F09-B3/main/blob/master/collated/test/laichengyu.md[Test code]]
 
 * *Other contributions*:
 
 ** Project management:
-*** Managed releases `v1.3` - `v1.5rc` (3 releases) on GitHub
+*** Managed releases `v1.1` (1 release) on GitHub
 ** Enhancements to existing features:
-*** Updated the GUI color scheme (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
+*** Add API for backup storage (Pull requests https://github.com/CS2103JAN2018-F09-B3/main/pull/17[#17])
+*** Refactored existing tests for existing features to suit new code base (Pull requests https://github.com/CS2103JAN2018-F09-B3/main/pull/110[#110])
 ** Documentation:
-*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
+*** Enable experimental attributes such as keyboard macros for the Developer Guide: https://github.com/CS2103JAN2018-F09-B3/main/pull/124[#124]
 ** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42]
-*** Contributed to forum discussions (examples:  https://github.com[1], https://github.com[2], https://github.com[3], https://github.com[4])
-*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com[1], https://github.com[2], https://github.com[3])
-*** Some parts of the history feature I added was adopted by several other class mates (https://github.com[1], https://github.com[2])
+*** PRs reviewed: https://github.com/CS2103JAN2018-F09-B3/main/pull/15[#15], https://github.com/CS2103JAN2018-F09-B3/main/pull/29[#29], https://github.com/CS2103JAN2018-F09-B3/main/pull/35[#35], https://github.com/CS2103JAN2018-F09-B3/main/pull/112[#112], https://github.com/CS2103JAN2018-F09-B3/main/pull/118[#118], https://github.com/CS2103JAN2018-F09-B3/main/pull/208[208]
+*** Contributed to forum discussions, reported bugs and raised issues (examples:  https://github.com/CS2103JAN2018-F09-B3/main/issues/50[50], https://github.com/CS2103JAN2018-F09-B3/main/issues/51[51], https://github.com/CS2103JAN2018-F09-B3/main/issues/69[69], https://github.com/CS2103JAN2018-F09-B3/main/issues/123[123], https://github.com/CS2103JAN2018-F09-B3/main/issues/125[125], https://github.com/CS2103JAN2018-F09-B3/main/issues/127[127])
+*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com/CS2103JAN2018-T15-B1/main/issues/52[52], https://github.com/CS2103JAN2018-T15-B1/main/issues/55[55], https://github.com/CS2103JAN2018-T15-B1/main/issues/60[60], https://github.com/CS2103JAN2018-T15-B1/main/issues/65[65], https://github.com/CS2103JAN2018-T15-B1/main/issues/68[68])
 ** Tools:
-*** Integrated a third party library (Natty) to the project (https://github.com[#42])
-*** Integrated a new Github plugin (CircleCI) to the team repo
-
-_{you can add/remove categories in the list above}_
+*** Integrated a third party library (GSON) to the project (https://github.com[#42])
+*** Integrated a third party library (Apache HttpClient) to the project (https://github.com[#42])
+*** Integrated a third party library (AsyncHttpClient) to the project (https://github.com[#42])
 
 == Contributions to the User Guide
 
@@ -49,9 +48,8 @@ _{you can add/remove categories in the list above}_
 |_Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users._
 |===
 
-include::../UserGuide.adoc[tag=undoredo]
-
-include::../UserGuide.adoc[tag=dataencryption]
+include::../UserGuide.adoc[tag=sync]
+include::../UserGuide.adoc[tag=autocomplete]
 
 == Contributions to the Developer Guide
 
@@ -59,13 +57,4 @@ include::../UserGuide.adoc[tag=dataencryption]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
-
-include::../DeveloperGuide.adoc[tag=dataencryption]
-
-
-== PROJECT: PowerPointLabs
-
----
-
-_{Optionally, you may include other projects in your portfolio.}_
+include::../DeveloperGuide.adoc[tag=autocomplete]
