@@ -17,6 +17,7 @@ import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.commands.NotifyCommand;
 import seedu.address.logic.commands.RedoCommand;
 import seedu.address.logic.commands.SellCommand;
+import seedu.address.logic.commands.SortCommand;
 import seedu.address.logic.commands.SyncCommand;
 import seedu.address.logic.commands.TagCommand;
 import seedu.address.logic.commands.UndoCommand;
