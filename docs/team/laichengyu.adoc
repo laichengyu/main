@@ -19,7 +19,7 @@ CoinBook is a desktop accounting application written in Java. It is targeted at 
 ** Highlights: This enhancement demonstrates live updating of data from external web APIs. It required analysis of design alternatives between synchronous and asynchronous data fetching. The implementation too was challenging as it required many utilities to be built such as UrlBuilderUtil to adhere to HTTP request formats and FetchUtil to perform API calls.
 ** Credits: External libraries used include: [http://hc.apache.org/httpcomponents-client-ga/httpclient/apidocs/overview-summary.html[Apache HttpClient]], [https://github.com/google/gson/[GSON]] and [https://github.com/AsyncHttpClient/async-http-client[AsyncHttpClient]]
 
-* *Minor enhancement*: added a autocomplete feature that allows users to quickly enter in the command wanted.
+* *Minor enhancement*: added a autocomplete feature that allows users to quickly enter in command.
 
 * *Code contributed*: [https://github.com/CS2103JAN2018-F09-B3/main/blob/master/collated/functional/laichengyu.md[Functional code]] [https://github.com/CS2103JAN2018-F09-B3/main/blob/master/collated/test/laichengyu.md[Test code]]
 
