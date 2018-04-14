@@ -1,6 +1,5 @@
 package seedu.address.logic;
 
-import java.util.List;
 import java.util.logging.Logger;
 
 import javafx.collections.ObservableList;
@@ -52,13 +51,6 @@ public class LogicManager extends ComponentManager implements Logic {
     public ObservableList<Coin> getFilteredCoinList() {
         return model.getFilteredCoinList();
     }
-
-    //@@author laichengyu
-    @Override
-    public List<String> getCodeList() {
-        return model.getCodeList();
-    }
-    //@@author
 
     @Override
     public ListElementPointer getHistorySnapshot() {

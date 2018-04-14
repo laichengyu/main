@@ -1,7 +1,5 @@
 package seedu.address.logic;
 
-import java.util.List;
-
 import javafx.collections.ObservableList;
 import seedu.address.logic.commands.CommandResult;
 import seedu.address.logic.commands.exceptions.CommandException;
@@ -23,11 +21,6 @@ public interface Logic {
 
     /** Returns an unmodifiable view of the filtered list of coins */
     ObservableList<Coin> getFilteredCoinList();
-
-    //@@author laichengyu
-    /** Returns an unmodifiable view of the list of coin codes */
-    List<String> getCodeList();
-    //@@author
 
     /** Returns the list of input entered by the user, encapsulated in a {@code ListElementPointer} object */
     ListElementPointer getHistorySnapshot();
