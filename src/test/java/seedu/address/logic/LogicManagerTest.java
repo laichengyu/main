@@ -48,11 +48,13 @@ public class LogicManagerTest {
         assertHistoryCorrect(listCommand);
     }
 
+    //@@author laichengyu
     @Test
     public void execute_syncCommandError_throwsNullPointerException() {
         thrown.expect(NullPointerException.class);
         assertSyncCorrect();
     }
+    //@@author
 
     @Test
     public void getFilteredCoinList_modifyList_throwsUnsupportedOperationException() {
@@ -130,6 +132,7 @@ public class LogicManagerTest {
         }
     }
 
+    //@@author laichengyu
     /**
      * Asserts that the result display shows {@code SyncCommand.MESSAGE_SUCCESS} upon the execution of
      * {@code SyncCommand}.
@@ -143,4 +146,5 @@ public class LogicManagerTest {
             throw new AssertionError("Parsing and execution of SyncCommand.COMMAND_WORD should succeed.", e);
         }
     }
+    //@@author
 }
