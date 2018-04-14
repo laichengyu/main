@@ -12,6 +12,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Region;
 import seedu.address.commons.core.LogsCenter;
 import seedu.address.commons.events.ui.NewResultAvailableEvent;
+import seedu.address.logic.CommandList;
 import seedu.address.logic.ListElementPointer;
 import seedu.address.logic.Logic;
 import seedu.address.logic.commands.CommandResult;
@@ -39,7 +40,7 @@ public class CommandBox extends UiPart<Region> {
         // calls #setStyleToDefault() whenever there is a change to the text of the command box.
         commandTextField.textProperty().addListener((unused1, unused2, unused3) -> setStyleToDefault());
         //@@author laichengyu
-        SuggestionProvider<String> suggestionProvider = SuggestionProvider.create(logic.getCommandList());
+        SuggestionProvider<String> suggestionProvider = SuggestionProvider.create(CommandList.COMMAND_LIST);
         TextFields.bindAutoCompletion(commandTextField, suggestionProvider);
         //@@author
         historySnapshot = logic.getHistorySnapshot();

@@ -25,7 +25,6 @@ public class LogicManager extends ComponentManager implements Logic {
     private final CoinBookParser coinBookParser;
     private final UndoRedoStack undoRedoStack;
     private final RuleChecker ruleChecker;
-    private final CommandList commandList;
 
     public LogicManager(Model model) {
         this.model = model;
@@ -33,7 +32,6 @@ public class LogicManager extends ComponentManager implements Logic {
         coinBookParser = new CoinBookParser();
         undoRedoStack = new UndoRedoStack();
         ruleChecker = new RuleChecker(model.getRuleBook());
-        commandList = new CommandList();
     }
 
     @Override
@@ -59,11 +57,6 @@ public class LogicManager extends ComponentManager implements Logic {
     @Override
     public List<String> getCodeList() {
         return model.getCodeList();
-    }
-
-    @Override
-    public List<String> getCommandList() {
-        return commandList.getList();
     }
     //@@author
 
