@@ -52,14 +52,14 @@ public class MainApp extends Application {
 
     private static final Logger logger = LogsCenter.getLogger(MainApp.class);
 
+    public final boolean isTest;
+
     protected Ui ui;
     protected Logic logic;
     protected Storage storage;
     protected Model model;
     protected Config config;
     protected UserPrefs userPrefs;
-
-    private final boolean isTest;
 
     public MainApp() {
         this.isTest = false;
