@@ -75,7 +75,7 @@ public class SyncCommand extends Command {
      * @param params cannot be null
      * @param type specifies type of data required
      */
-    private void addAdditionalParams(List<NameValuePair> params, String type) {
+    void addAdditionalParams(List<NameValuePair> params, String type) {
         switch (type) {
         case "historical":
             params.add(new BasicNameValuePair(LIMIT_PARAM, HISTORICAL_DATA_HOURS_LIMIT));
